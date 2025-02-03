@@ -8,17 +8,24 @@ import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class WeekDayHandlerTest {
 
-     @Test
+    private WeekDayHandler weekDayHandler;
+
+    @BeforeEach
+    public void beforeEach(){
+        weekDayHandler = new WeekDayHandler();
+        weekDayHandler.createList();
+    }
+
+    @Test
     @DisplayName("It should create a list with the days of the week")
     public void test_creates_list_with_days_of_the_week(){
 
-        WeekDayHandler weekDayHandler = new WeekDayHandler();
-        weekDayHandler.createList();
 
         assertThat(weekDayHandler.getDays(), allOf(
         is(instanceOf(List.class)),
