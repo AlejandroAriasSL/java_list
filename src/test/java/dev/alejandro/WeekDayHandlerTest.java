@@ -6,6 +6,7 @@ import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
@@ -76,6 +77,15 @@ public class WeekDayHandlerTest {
         assertThat(weekDayHandler.dayExists(day), is(true));
         assertThat(weekDayHandler.dayExists(day2), is(false));
 
+    }
+
+    @Test
+    @DisplayName("It should sort the list alphabetically")
+    public void test_sorts_the_list_alphabetically(){
+
+        weekDayHandler.sortAlphabetically();
+
+        assertThat(weekDayHandler.getDays(), contains("Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"));
     }
 
 }
