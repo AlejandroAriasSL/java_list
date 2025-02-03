@@ -1,11 +1,13 @@
 package dev.alejandro;
 
+import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.not;
 
 import java.util.List;
 
@@ -38,6 +40,16 @@ public class WeekDayHandlerTest {
     public void test_returns_length_of_the_list(){
         
         assertThat(weekDayHandler.getSize(), is(greaterThan(0)));
+
+    }
+
+    @Test
+    @DisplayName("It should delete a specified day of the week")
+    public void test_delete_specified_day_of_the_week(){
+
+        String day = "Monday";
+        weekDayHandler.deleteDay(day);
+        assertThat(weekDayHandler.getDays(), not(hasItem(day)));
         
     }
 
