@@ -1,5 +1,6 @@
 package dev.alejandro;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
@@ -8,6 +9,7 @@ import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.nullValue;
 
 import java.util.List;
 
@@ -50,7 +52,18 @@ public class WeekDayHandlerTest {
         String day = "Monday";
         weekDayHandler.deleteDay(day);
         assertThat(weekDayHandler.getDays(), not(hasItem(day)));
-        
+
+    }
+
+        @Test
+    @DisplayName("It should return the specified day")
+    public void test_return_specified_day(){
+
+        String day = "Tuesday";
+        String nullDay = "Fork";
+
+        assertThat(weekDayHandler.getSpecificDay(day), is(equalTo(day)));
+        assertThat(weekDayHandler.getSpecificDay(nullDay), is(nullValue()));
     }
 
 }
