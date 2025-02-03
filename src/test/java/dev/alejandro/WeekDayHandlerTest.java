@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.List;
@@ -30,6 +31,14 @@ public class WeekDayHandlerTest {
         assertThat(weekDayHandler.getDays(), allOf(
         is(instanceOf(List.class)),
         hasItems("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" )));
+    }
+
+    @Test
+    @DisplayName("It should return the lenght of the list")
+    public void test_returns_length_of_the_list(){
+        
+        assertThat(weekDayHandler.getSize(), is(greaterThan(0)));
+        
     }
 
 }
