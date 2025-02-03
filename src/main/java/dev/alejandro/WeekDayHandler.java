@@ -48,4 +48,8 @@ public class WeekDayHandler {
         return daysOfTheWeek.contains(day);
     }
 
+    public void sortAlphabetically(){
+        daysOfTheWeek.sort(null);
+    }
+
 }
