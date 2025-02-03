@@ -88,4 +88,12 @@ public class WeekDayHandlerTest {
         assertThat(weekDayHandler.getDays(), contains("Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"));
     }
 
+    @Test
+    @DisplayName("It should clear the list")
+    public void test_clears_the_list(){
+
+        weekDayHandler.emptyList();
+        
+        assertThat(weekDayHandler.getSize(), is(0));
+    }
 }
