@@ -52,4 +52,8 @@ public class WeekDayHandler {
         daysOfTheWeek.sort(null);
     }
 
+    public void emptyList(){
+        daysOfTheWeek.clear();
+    }
+
 }
