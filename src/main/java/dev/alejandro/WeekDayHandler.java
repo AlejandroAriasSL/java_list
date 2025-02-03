@@ -42,6 +42,10 @@ public class WeekDayHandler {
             
     
         return null;
-    } 
+    }
+    
+    public boolean dayExists(String day){
+        return daysOfTheWeek.contains(day);
+    }
 
 }
