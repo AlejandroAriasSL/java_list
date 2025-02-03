@@ -35,4 +35,13 @@ public class WeekDayHandler {
         daysOfTheWeek.remove(day);
     }
 
+    public String getSpecificDay(String day){
+        
+        for (String currentDay : daysOfTheWeek)
+        if(currentDay == day) return currentDay;    
+            
+    
+        return null;
+    } 
+
 }
