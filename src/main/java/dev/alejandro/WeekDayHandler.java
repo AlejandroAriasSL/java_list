@@ -25,4 +25,9 @@ public class WeekDayHandler {
         return daysOfTheWeek;
     }
 
+    
+    public int getSize(){
+        return daysOfTheWeek.size();
+    }
+
 }
