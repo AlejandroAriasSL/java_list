@@ -55,7 +55,7 @@ public class WeekDayHandlerTest {
 
     }
 
-        @Test
+    @Test
     @DisplayName("It should return the specified day")
     public void test_return_specified_day(){
 
@@ -64,6 +64,18 @@ public class WeekDayHandlerTest {
 
         assertThat(weekDayHandler.getSpecificDay(day), is(equalTo(day)));
         assertThat(weekDayHandler.getSpecificDay(nullDay), is(nullValue()));
+    }
+
+    @Test
+    @DisplayName("It should return boolean if the requested day exists in the list")
+    public void test_return_true_if_exists_in_list(){
+
+        String day = "Wednesday";
+        String day2 = "Day";
+
+        assertThat(weekDayHandler.dayExists(day), is(true));
+        assertThat(weekDayHandler.dayExists(day2), is(false));
+
     }
 
 }
